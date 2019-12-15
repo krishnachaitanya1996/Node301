@@ -1,0 +1,9 @@
+{
+    "apps": [
+        {
+            "name": "restaurant-search",
+            "script": "./src/index.js",
+            "watch": true
+        }
+    ]
+}

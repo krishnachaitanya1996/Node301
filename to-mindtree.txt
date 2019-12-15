@@ -1,0 +1,102 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug",
+            "program": "${workspaceFolder}/src/server.js",
+            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/babel-node",
+            "runtimeArgs": ["--nolazy"]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Mocha All",
+            "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+            "args": [
+                "--require",
+                "@babel/register",
+                "--timeout",
+                "999999",
+                "--colors",
+                "${workspaceFolder}/src/**/**spec.js"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Mocha Current File",
+            "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+            "args": [
+                "--require",
+                "@babel/register",
+                "--timeout",
+                "999999",
+                "--colors",
+                "${file}"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        }
+    ]
+}
+
+---
+
+
+{
+    "presets": [
+      "@babel/preset-env"
+    ],
+  "sourceMaps": "inline",
+  "retainLines": true
+}
+
+
+---
+
+package.json
+
+
+{
+  "name": "restaurant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node ./src/server.js",
+    "test": "mocha --require @babel/register 'src/**/**spec.js'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.3.0",
+    "http-errors": "^1.7.3",
+    "jsonfile": "^5.0.0",
+    "mongoose": "^5.8.1",
+    "morgan": "^1.9.1",
+    "nodemon": "^2.0.2",
+    "swagger-express-middleware": "^2.0.4",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/node": "^7.7.4",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/register": "^7.7.4",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "sinon": "^7.5.0"
+  }
+}
+
+
