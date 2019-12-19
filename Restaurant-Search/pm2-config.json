@@ -4,6 +4,16 @@
             "name": "restaurant-search",
             "script": "./src/index.js",
             "watch": true
+        },
+        {
+            "name": "orderServie",
+            "script": "../orders/src/index.js",
+            "watch":true
+        },
+        {
+            "name": "aggregrator",
+            "script": "../gateway/src/index.js",
+            "watch": true
         }
     ]
 }

@@ -30,7 +30,7 @@ pipelines:
       - api
     policies:
     # Uncomment `key-auth:` when instructed to in the Getting Started guide.
-    - key-auth:
+      - key-auth:
       - proxy:
           - action:
               serviceEndpoint: httpbin 
@@ -39,10 +39,10 @@ pipelines:
   restaurant-search-pipeline:
     apiEndpoints:
       - restaurant-search-api
-    policies:
+    policies: 
     # Uncomment `key-auth:` when instructed to in the Getting Started guide.
-    - key-auth:
-      - proxy:
-          - action:
+     - key-auth:
+     - proxy:
+           action:
               serviceEndpoint: restaurant-search 
               changeOrigin: true

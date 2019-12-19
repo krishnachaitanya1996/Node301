@@ -1,0 +1,9 @@
+{
+    "apps": [
+        {
+            "name": "Aggregrator",
+            "script": "./src/index.js",
+            "watch": true
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "apps": [
+        {
+            "name": "orderService",
+            "script": "./src/index.js",
+            "watch": true
+        }
+    ]
+}
